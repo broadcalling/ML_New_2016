@@ -740,6 +740,15 @@ class CourseFields(object):
         scope=Scope.settings
     )
 
+    display_block_location = Boolean(
+        display_name=_("Display block location"),
+        help=_(
+            "Enter true or false. If this value is true, in the settings xblock to be displayed location."
+        ),
+        default=False,
+        scope=Scope.settings
+    )
+
 
 class CourseModule(CourseFields, SequenceModule):  # pylint: disable=abstract-method
     """
