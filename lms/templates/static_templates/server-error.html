@@ -2,16 +2,7 @@
 <%inherit file="../main.html" />
 
 <section class="outside-app">
-  <h1>
-    ${_(u"There has been a 500 error on the {platform_name} servers").format(
-        platform_name=u"<em>{platform_name}</em>".format(platform_name=settings.PLATFORM_NAME)
-    )}
-  </h1>
-  <p>
-    ${_(u'Please wait a few seconds and then reload the page. If the problem persists, please email us at {email}.').format(
-        email=u'<a href="mailto:{email}">{email}</a>'.format(
-            email=settings.TECH_SUPPORT_EMAIL
-        )
-    )}
-  </p>
+  <h1>Oups. Something is not right.</h1>
+  <h3 style="max-width: 100%; text-align: center;">As a quick solution, please try reloading the page in a few moments. Meanwhile the team of highly trained raccoons is dealing with the situation.</h3>
+  <img src="/static/themes/default/images/raccoons__.png" alt="">
 </section>
