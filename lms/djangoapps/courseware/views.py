@@ -86,6 +86,8 @@ from eventtracking import tracker
 import analytics
 from courseware.url_helpers import get_redirect_url
 
+from openedx.core.djangoapps.credit.utils import get_visible_courses
+
 log = logging.getLogger("edx.courseware")
 
 template_imports = {'urllib': urllib}
@@ -132,6 +134,9 @@ def courses(request):
             courses_list = sort_by_start_date(courses_list)
         else:
             courses_list = sort_by_announcement(courses_list)
+
+    # Added filter
+    courses_list = get_visible_courses(request, courses_list)
 
     return render_to_response(
         "courseware/courses.html",

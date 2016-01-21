@@ -123,6 +123,8 @@ from notification_prefs.views import enable_notifications
 # Note that this lives in openedx, so this dependency should be refactored.
 from openedx.core.djangoapps.user_api.preferences import api as preferences_api
 
+from openedx.core.djangoapps.credit.utils import get_visible_courses
+
 
 log = logging.getLogger("edx.student")
 AUDIT_LOG = logging.getLogger("audit")
@@ -164,6 +166,9 @@ def index(request, extra_context=None, user=AnonymousUser()):
         courses = sort_by_start_date(courses)
     else:
         courses = sort_by_announcement(courses)
+
+    # Added filter
+    courses = get_visible_courses(request, courses)
 
     context = {'courses': courses}
 
