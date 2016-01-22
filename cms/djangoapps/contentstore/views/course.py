@@ -910,7 +910,9 @@ def settings_handler(request, course_key_string):
                 settings.FEATURES.get('ENABLE_MKTG_SITE', False)
             )
 
-            about_page_editable = not marketing_site_enabled
+            # about_page_editable = not marketing_site_enabled
+            # we changed it because we need to see these page editable always
+            about_page_editable = True
             enrollment_end_editable = GlobalStaff().has_user(request.user) or not marketing_site_enabled
             short_description_editable = settings.FEATURES.get('EDITABLE_SHORT_DESCRIPTION', True)
             settings_context = {
