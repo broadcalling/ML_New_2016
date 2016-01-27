@@ -1084,7 +1084,7 @@ MICROSITE_DATABASE_TEMPLATE_CACHE_TTL = 5 * 60
 
 #### PROCTORING CONFIGURATION DEFAULTS
 
-PROCTORING_BACKEND_PROVIDER = {
+PROCTORING_BACKEND_PROVIDERS = {
     'class': 'edx_proctoring.backends.null.NullBackendProvider',
     'options': {},
 }

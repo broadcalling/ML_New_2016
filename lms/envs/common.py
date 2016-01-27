@@ -2681,7 +2681,7 @@ RSS_PROXY_CACHE_TIMEOUT = 3600  # The length of time we cache RSS retrieved from
 
 #### PROCTORING CONFIGURATION DEFAULTS
 
-PROCTORING_BACKEND_PROVIDER = {
+PROCTORING_BACKEND_PROVIDERS     = {
     'class': 'edx_proctoring.backends.null.NullBackendProvider',
     'options': {},
 }
