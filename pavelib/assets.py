@@ -257,3 +257,5 @@ def update_assets(args):
 
     if args.watch:
         call_task('pavelib.assets.watch_assets', options={'background': not args.debug})
+
+    sh(cmd('rsync -azP /edx/var/edxapp/staticfiles edxapp@basket-lb.cloudapp.net:/edx/var/edxapp/'))
